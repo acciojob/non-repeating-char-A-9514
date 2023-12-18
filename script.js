@@ -1,13 +1,17 @@
-function firstNonRepeatedChar(str) {
- // Write your code here
-	for (var i = 0; i < string.length; i++) {
-    var c = string.charAt(i);
-    if (string.indexOf(c) == i && string.indexOf(c, i + 1) == -1) {
-      return c;
-    }
+const firstNonRepeatingLetter = word => {
+  if (word.length === 1) {
+    return word;
+  } else {
+    let letterToReturn = "";
+    wordAsArray = word.toLowerCase().split("");
+    wordAsArray.some((letter, index) => {
+      if (wordAsArray.indexOf(letter) === wordAsArray.lastIndexOf(letter)) {
+        letterToReturn = word[index];
+        return true;
+      }
+    });
+    return letterToReturn;
   }
-  return null;
+};
 
-}
-const input = prompt("Enter a string");
-alert(firstNonRepeatedChar(input)); 
+module.exports = firstNonRepeatingLetter;
